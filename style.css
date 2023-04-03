@@ -211,7 +211,19 @@ ul#pList {
    background: #fff;
    border-radius: 12px;
    padding: 20px;
-   /* display: none; */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 12px;
+   display: none;
+}
+
+.planet-label {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
 }
 
 .intro img {

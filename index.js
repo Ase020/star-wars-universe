@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((err) => console.log(err.message));
 
    const pList = document.getElementById("pList");
+   const pDetails = document.getElementById("planet-details");
    //   Fetch Planets data
    fetch("https://www.swapi.tech/api/planets")
       .then((res) => res.json())
@@ -73,6 +74,65 @@ document.addEventListener("DOMContentLoaded", () => {
             const planetList = document.createElement("li");
             planetList.textContent = planet.name;
             pList.append(planetList);
+
+            planetList.addEventListener("click", () => {
+               //    Fetch individual planet
+               fetch(planet.url)
+                  .then((res) => res.json())
+                  .then(({ result }) => {
+                     console.log(result.properties);
+                     pDetails.style.display = "flex";
+                     pDetails.innerHTML = `
+                     <div class="planet-label">
+                  <h5>Name</h5>
+                  <span>${result.properties.name}</span>
+               </div>
+
+               <div class="planet-label">
+                  <h5>Population</h5>
+                  <span>${result.properties.population === "unknown" ? "Unknown number of" : parseInt(result.properties.population).toLocaleString()} humans</span>
+               </div>
+
+               <div class="planet-label">
+                  <h5>Gravity</h5>
+                  <span>${result.properties.gravity === "N/A" ? "Unknown" : result.properties.gravity}</span>
+               </div>
+
+               <div class="planet-label">
+                  <h5>Diameter</h5>
+                  <span>${result.properties.diameter} km</span>
+               </div>
+
+               <div class="planet-label">
+                  <h5>Orbital Period</h5>
+                  <span>${result.properties.orbital_period} days</span>
+               </div>
+
+               <div class="planet-label">
+                  <h5>Rotation Period</h5>
+                  <span>${result.properties.rotation_period} days</span>
+               </div>
+
+               <div class="planet-label">
+                  <h5>Climate</h5>
+                  <span>${result.properties.climate}</span>
+               </div>
+
+               <div class="planet-label">
+                  <h5>Terrain</h5>
+                  <span>${result.properties.terrain}</span>
+               </div>
+
+               <div class="planet-label">
+                  <h5>Surface water</h5>
+                  <span>${result.properties.surface_water}${result.properties.surface_water === "unknown" ? "" : "%"}</span>
+               </div>
+                     `;
+                  })
+                  .catch((err) => {
+                     console.log(err.message);
+                  });
+            });
          });
       })
       .catch((err) => console.log(err.message));
