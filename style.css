@@ -211,6 +211,7 @@ ul#pList {
    background: #fff;
    border-radius: 12px;
    padding: 20px;
+   /* display: none; */
 }
 
 .intro img {

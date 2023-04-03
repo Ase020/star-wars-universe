@@ -64,9 +64,17 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch((err) => console.log(err.message));
 
+   const pList = document.getElementById("pList");
    //   Fetch Planets data
    fetch("https://www.swapi.tech/api/planets")
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then(({ results }) => {
+         results.forEach((planet) => {
+            const planetList = document.createElement("li");
+            planetList.textContent = planet.name;
+            console.log(planetList);
+            pList.append(planetList);
+         });
+      })
       .catch((err) => console.log(err.message));
 });
