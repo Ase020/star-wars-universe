@@ -67,6 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
    const pList = document.getElementById("pList");
    const pDetails = document.getElementById("planet-details");
    const addPlanet = document.getElementById("add-planet");
+   const pForm = document.getElementById("pForm");
+   const savedPlanet = document.querySelector(".saved-planet");
    //   Fetch Planets data
    fetch("https://www.swapi.tech/api/planets")
       .then((res) => res.json())
@@ -139,6 +141,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
    //   Add Planet eventListener
    addPlanet.addEventListener("click", () => {
-      console.log("first");
+      pDetails.style.display = "flex";
+   });
+
+   pForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      savedPlanet.style.display = "flex";
+      //   const newPlanetObj = {
+      //      name: e.target.planet_name.value,
+      //      population: e.target.planet_population.value,
+      //      gravity: e.target.planet_gravity.value,
+      //      diameter: e.target.planet_diameter.value,
+      //      orbital_period: e.target.orbital_period.value,
+      //      rotation_period: e.target.rotation_period.value,
+      //      climate: e.target.climate.value,
+      //      terrain: e.target.terrain.value,
+      //      surface_water: e.target.surface_water.value,
+      //   };
+      pForm.reset();
+   });
+
+   //    Warns a user of page reload
+   window.addEventListener("beforeunload", (e) => {
+      e.preventDefault();
+      e.returnValue = "";
    });
 });
