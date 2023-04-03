@@ -72,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
          results.forEach((planet) => {
             const planetList = document.createElement("li");
             planetList.textContent = planet.name;
-            console.log(planetList);
             pList.append(planetList);
          });
       })
