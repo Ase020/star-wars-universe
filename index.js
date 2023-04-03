@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
    const pList = document.getElementById("pList");
    const pDetails = document.getElementById("planet-details");
+   const addPlanet = document.getElementById("add-planet");
    //   Fetch Planets data
    fetch("https://www.swapi.tech/api/planets")
       .then((res) => res.json())
@@ -80,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
                fetch(planet.url)
                   .then((res) => res.json())
                   .then(({ result }) => {
-                     console.log(result.properties);
                      pDetails.style.display = "flex";
                      pDetails.innerHTML = `
                      <div class="planet-label">
@@ -136,4 +136,9 @@ document.addEventListener("DOMContentLoaded", () => {
          });
       })
       .catch((err) => console.log(err.message));
+
+   //   Add Planet eventListener
+   addPlanet.addEventListener("click", () => {
+      console.log("first");
+   });
 });

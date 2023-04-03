@@ -55,7 +55,21 @@
                <button id="add-planet">Add Planet</button>
             </div>
 
-            <div class="planet-details" id="planet-details"></div>
+            <div class="planet-details" id="planet-details">
+               <form class="planet-form">
+                  <h4>Add a new planet</h4>
+                  <input class="planet-input" type="text" name="name" id="planet_name" placeholder="Earth" required />
+                  <input class="planet-input" type="text" name="population" id="planet_population" placeholder="8,163,741,283 humans" />
+                  <input class="planet-input" type="text" name="gravity" id="planet_gravity" placeholder="1 standard" />
+                  <input class="planet-input" type="text" name="diameter" id="planet_diameter" placeholder="54,874" />
+                  <input class="planet-input" type="text" name="orbital_period" id="orbital_period" placeholder="374" />
+                  <input class="planet-input" type="text" name="rotation_period" id="rotation_period" placeholder="21" />
+                  <input class="planet-input" type="text" name="climate" id="climate" placeholder="temperate" />
+                  <input class="planet-input" type="text" name="terrain" id="terrain" placeholder="gas giant" />
+                  <input class="planet-input" type="text" name="surface_water" id="surface_water" placeholder="52" />
+                  <input class="planet-input" type="submit" value="Add new planet" id="submit_planet" />
+               </form>
+            </div>
          </div>
       </section>
       <section class="section" id="people">people</section>
