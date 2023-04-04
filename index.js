@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
    const imgLogo = document.createElement("img");
    const spanLogo = document.createElement("span");
 
-   imgLogo.src = "./assets/logo.png";
+   imgLogo.src = "assets/logo.png";
    imgLogo.alt = "logo";
 
    spanLogo.textContent = "Star Wars";
