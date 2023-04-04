@@ -7,10 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
    const imgLogo = document.createElement("img");
    const spanLogo = document.createElement("span");
 
-   imgLogo.src = "/assets/icons8-star-wars-480.png";
-   // imgLogo.alt = "logo";
+   imgLogo.src = "./assets/logo.png";
+   imgLogo.alt = "logo";
 
    spanLogo.textContent = "Star Wars";
+
    logoIcon.append(spanLogo && imgLogo);
 
    function romanConverter(episode) {
