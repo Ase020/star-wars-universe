@@ -324,11 +324,19 @@ ul#pList {
    border-radius: 8px;
 }
 
+.search-container {
+   background: rgb(239, 239, 232);
+   padding: 12px;
+   width: 30%;
+   border-radius: 8px;
+}
+
 .search-container input {
    padding: 6px 12px;
    border-radius: 5px;
    border: none;
    outline: none;
+   width: 90%;
 }
 
 .search-container button {
