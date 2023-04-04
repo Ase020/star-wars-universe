@@ -147,6 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
    pForm.addEventListener("submit", (e) => {
       e.preventDefault();
       savedPlanet.style.display = "flex";
+      // eslint-disable-next-line no-unused-vars
       const newPlanetObj = {
          name: e.target.planet_name.value,
          population: e.target.planet_population.value,
@@ -158,6 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
          terrain: e.target.terrain.value,
          surface_water: e.target.surface_water.value,
       };
+
       pForm.reset();
    });
 
@@ -179,6 +181,49 @@ document.addEventListener("DOMContentLoaded", () => {
             const li = document.createElement("li");
             li.textContent = character.name;
             peopleList.append(li);
+
+            // OnClick event of characters
+            li.addEventListener("click", () => {
+               fetch(character.url)
+                  .then((res) => res.json())
+                  .then(({ result }) => {
+                     console.log(result.properties);
+                     peopleDetails.innerHTML = `
+                     <div class="planet-label">
+         <h5>Name</h5>
+         <span>${result.properties.name}</span>
+      </div>
+      <div class="planet-label">
+         <h5>Gender</h5>
+         <span style="text-transform: capitalize">${result.properties.gender}</span>
+      </div>
+      <div class="planet-label">
+         <h5>DOB</h5>
+         <span>${result.properties.birth_year}</span>
+      </div>
+      <div class="planet-label">
+         <h5>Weight</h5>
+         <span>${result.properties.mass} kgs</span>
+      </div>
+      <div class="planet-label">
+         <h5>Height</h5>
+         <span>${result.properties.height} cm</span>
+      </div>
+      <div class="planet-label">
+         <h5>Skin tone</h5>
+         <span style="text-transform: capitalize">${result.properties.skin_color}</span>
+      </div>
+      <div class="planet-label">
+         <h5>Hair color</h5>
+         <span style="text-transform: capitalize">${result.properties.hair_color}</span>
+      </div>
+      <div class="planet-label">
+         <h5>Eye color</h5>
+         <span style="text-transform: capitalize">${result.properties.eye_color}</span>
+      </div>
+                     `;
+                  });
+            });
          });
       })
       .catch((err) => {
@@ -189,16 +234,6 @@ document.addEventListener("DOMContentLoaded", () => {
    fetch("https://www.swapi.tech/api/people/1")
       .then((res) => res.json())
       .then(({ result }) => {
-         // fetch character planet
-         const fetchPlanet = fetch(result.properties.homeworld)
-            .then((res) => res.json())
-            .then((data) => {
-               // console.log(data.result.properties.name);
-               return data.result.properties.name;
-            });
-
-         console.log();
-
          peopleDetails.innerHTML = `
          <div class="planet-label">
          <h5>Name</h5>
