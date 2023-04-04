@@ -30,6 +30,11 @@ nav img {
    cursor: pointer;
 }
 
+nav a span {
+   color: black;
+   -webkit-text-stroke: 1px #fadd06;
+}
+
 nav .menu-list {
    display: flex;
    gap: 30px;

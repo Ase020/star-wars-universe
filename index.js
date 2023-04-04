@@ -2,6 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
    const filmCatalog = document.getElementById("fList");
    const filmDetails = document.getElementById("film-details");
 
+   // Sort logo bug
+   const logoIcon = document.getElementById("logo-icon");
+   const imgLogo = document.createElement("img");
+   const spanLogo = document.createElement("span");
+
+   imgLogo.src = "/assets/icons8-star-wars-480.png";
+   imgLogo.alt = "logo";
+
+   spanLogo.textContent = "Star Wars";
+   logoIcon.append(spanLogo && imgLogo);
+
    function romanConverter(episode) {
       if (episode === 1) {
          return "Episode I: ";
