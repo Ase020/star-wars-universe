@@ -147,17 +147,17 @@ document.addEventListener("DOMContentLoaded", () => {
    pForm.addEventListener("submit", (e) => {
       e.preventDefault();
       savedPlanet.style.display = "flex";
-      //   const newPlanetObj = {
-      //      name: e.target.planet_name.value,
-      //      population: e.target.planet_population.value,
-      //      gravity: e.target.planet_gravity.value,
-      //      diameter: e.target.planet_diameter.value,
-      //      orbital_period: e.target.orbital_period.value,
-      //      rotation_period: e.target.rotation_period.value,
-      //      climate: e.target.climate.value,
-      //      terrain: e.target.terrain.value,
-      //      surface_water: e.target.surface_water.value,
-      //   };
+      const newPlanetObj = {
+         name: e.target.planet_name.value,
+         population: e.target.planet_population.value,
+         gravity: e.target.planet_gravity.value,
+         diameter: e.target.planet_diameter.value,
+         orbital_period: e.target.orbital_period.value,
+         rotation_period: e.target.rotation_period.value,
+         climate: e.target.climate.value,
+         terrain: e.target.terrain.value,
+         surface_water: e.target.surface_water.value,
+      };
       pForm.reset();
    });
 
@@ -166,4 +166,6 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       e.returnValue = "";
    });
+
+   // People
 });
