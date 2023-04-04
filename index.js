@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
    const spanLogo = document.createElement("span");
 
    imgLogo.src = "/assets/icons8-star-wars-480.png";
-   imgLogo.alt = "logo";
+   // imgLogo.alt = "logo";
 
    spanLogo.textContent = "Star Wars";
    logoIcon.append(spanLogo && imgLogo);
