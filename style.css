@@ -373,5 +373,13 @@ ul#pList {
 }
 
 footer {
-   background: lightgray;
+   padding: 60px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 12px;
+}
+
+footer p .heart {
+   color: red;
 }

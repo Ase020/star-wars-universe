@@ -333,4 +333,12 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(err);
          });
    });
+
+   //dynamic year footer
+   let now = new Date();
+   const year = now.getFullYear();
+
+   const dynamicYear = document.getElementById("yearD");
+   dynamicYear.textContent = year;
+   console.log(dynamicYear);
 });
