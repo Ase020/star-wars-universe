@@ -188,7 +188,6 @@ document.addEventListener("DOMContentLoaded", () => {
                fetch(character.url)
                   .then((res) => res.json())
                   .then(({ result }) => {
-                     console.log(result.properties);
                      peopleDetails.innerHTML = `
                      <div class="planet-label">
          <h5>Name</h5>
@@ -292,8 +291,6 @@ document.addEventListener("DOMContentLoaded", () => {
       fetch(`https://www.swapi.tech/api/people/?name=${query}`)
          .then((res) => res.json())
          .then(({ result }) => {
-            console.log(result[0].properties);
-
             peopleDetails.innerHTML = `
          <div class="planet-label">
          <h5>Name</h5>
@@ -340,5 +337,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
    const dynamicYear = document.getElementById("yearD");
    dynamicYear.textContent = year;
-   console.log(dynamicYear);
 });
