@@ -306,7 +306,7 @@ ul#pList {
    display: grid;
    grid-template-columns: repeat(5, minmax(0, 1fr));
    gap: 20px;
-   padding: 6px 12px;
+   padding: 12px;
    text-align: center;
    border-radius: 12px;
    background: rgb(239, 239, 232);
@@ -327,8 +327,10 @@ ul#pList {
 .search-container {
    background: rgb(239, 239, 232);
    padding: 12px;
-   width: 30%;
+   width: 40%;
    border-radius: 8px;
+   display: flex;
+   gap: 0;
 }
 
 .search-container input {
@@ -349,10 +351,10 @@ ul#pList {
 .people-details {
    background: rgb(239, 239, 232);
    border-radius: 12px;
-   width: 80%;
+   width: 60%;
    height: 60%;
    display: grid;
-   grid-template-columns: repeat(3, minmax(0, 1fr));
+   grid-template-columns: repeat(2, minmax(0, 1fr));
    gap: 20px;
    text-align: center;
 }

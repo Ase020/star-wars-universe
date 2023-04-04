@@ -168,4 +168,81 @@ document.addEventListener("DOMContentLoaded", () => {
    });
 
    // People
+   const peopleList = document.getElementById("people-list");
+   const peopleDetails = document.getElementById("people-details");
+
+   // fetch people
+   fetch("https://www.swapi.tech/api/people")
+      .then((res) => res.json())
+      .then(({ results }) => {
+         results.forEach((character) => {
+            const li = document.createElement("li");
+            li.textContent = character.name;
+            peopleList.append(li);
+         });
+      })
+      .catch((err) => {
+         console.log(err.message);
+      });
+
+   // fetch first character
+   fetch("https://www.swapi.tech/api/people/1")
+      .then((res) => res.json())
+      .then(({ result }) => {
+         // fetch character planet
+         const fetchPlanet = fetch(result.properties.homeworld)
+            .then((res) => res.json())
+            .then((data) => {
+               // console.log(data.result.properties.name);
+               return data.result.properties.name;
+            });
+
+         console.log();
+
+         peopleDetails.innerHTML = `
+         <div class="planet-label">
+         <h5>Name</h5>
+         <span>${result.properties.name}</span>
+      </div>
+      <div class="planet-label">
+         <h5>Gender</h5>
+         <span style="text-transform: capitalize">${result.properties.gender}</span>
+      </div>
+      <div class="planet-label">
+         <h5>DOB</h5>
+         <span>${result.properties.birth_year}</span>
+      </div>
+      <div class="planet-label">
+         <h5>Weight</h5>
+         <span>${result.properties.mass} kgs</span>
+      </div>
+      <div class="planet-label">
+         <h5>Height</h5>
+         <span>${result.properties.height} cm</span>
+      </div>
+      <div class="planet-label">
+         <h5>Skin tone</h5>
+         <span style="text-transform: capitalize">${result.properties.skin_color}</span>
+      </div>
+      <div class="planet-label">
+         <h5>Hair color</h5>
+         <span style="text-transform: capitalize">${result.properties.hair_color}</span>
+      </div>
+      <div class="planet-label">
+         <h5>Eye color</h5>
+         <span style="text-transform: capitalize">${result.properties.eye_color}</span>
+      </div> 
+      `;
+         // <div class="planet-label">
+         //    <h5>Home planet</h5>
+         //    <span id="home-planet" style="text-transform: capitalize">${(fetchPlanet = fetch(result.properties.homeworld)
+         //       .then((res) => res.json())
+         //       .then((data) => {
+         //          document.getElementById("home-planet").textContent = data.result.properties.name;
+         //       }))}</span>
+         // </div>
+      })
+      .catch((err) => {
+         console.log(err.message);
+      });
 });

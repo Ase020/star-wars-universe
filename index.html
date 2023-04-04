@@ -35,6 +35,7 @@
             </a>
          </ul>
       </nav>
+
       <section class="section" id="films">
          <h1>Welcome to the world of <span>Star Wars</span></h1>
 
@@ -47,6 +48,7 @@
             <div class="film-details" id="film-details"></div>
          </div>
       </section>
+
       <section class="section" id="planets">
          <div class="planet-wrapper" id="planet-wrapper">
             <div class="planet-list">
@@ -74,21 +76,11 @@
             </div>
          </div>
       </section>
+
       <section class="section" id="people">
          <div class="people-wrapper">
             <h4>Top characters:</h4>
-            <ul class="people-list">
-               <li>Luke Skywalker</li>
-               <li>Luke Skywalker</li>
-               <li>Luke Skywalker</li>
-               <li>Luke Skywalker</li>
-               <li>Luke Skywalker</li>
-               <li>Luke Skywalker</li>
-               <li>Luke Skywalker</li>
-               <li>Luke Skywalker</li>
-               <li>Luke Skywalker</li>
-               <li>Luke Skywalker</li>
-            </ul>
+            <ul class="people-list" id="people-list"></ul>
 
             <div class="search-container">
                <input type="text" placeholder="Search character" />
@@ -97,8 +89,8 @@
 
             <h5>Character not found! Try again</h5>
 
-            <div class="people-details">
-               <div class="planet-label">
+            <div class="people-details" id="people-details">
+               <!-- <div class="planet-label">
                   <h5>Terrain</h5>
                   <span>${result.properties.terrain}</span>
                </div>
@@ -128,15 +120,16 @@
                </div>
                <div class="planet-label">
                   <h5>Terrain</h5>
-                  <span>${result.properties.terrain}</span>
+                  <span style="text-transform: capitalize">${result.properties.terrain}</span>
                </div>
                <div class="planet-label">
                   <h5>Terrain</h5>
-                  <span>${result.properties.terrain}</span>
-               </div>
+                  <span id="home-planet">${result.properties.terrain}</span>
+               </div> -->
             </div>
          </div>
       </section>
+
       <section class="section" id="species">species</section>
       <section class="section" id="starships">starships</section>
       <section class="section" id="vehicles">vehicles</section>
