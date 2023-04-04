@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
          surface_water: e.target.surface_water.value,
       };
 
-      // pForm.reset();
+      pForm.reset();
    });
 
    //    Warns a user of page reload
@@ -283,4 +283,54 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
    // Search character functionality
+   const searchContainer = document.querySelector(".search-container");
+   searchContainer.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const query = e.target.search_input.value;
+
+      // fetch query
+      fetch(`https://www.swapi.tech/api/people/?name=${query}`)
+         .then((res) => res.json())
+         .then(({ result }) => {
+            console.log(result[0].properties);
+
+            peopleDetails.innerHTML = `
+         <div class="planet-label">
+         <h5>Name</h5>
+         <span>${result[0].properties.name}</span>
+      </div>
+      <div class="planet-label">
+         <h5>Gender</h5>
+         <span style="text-transform: capitalize">${result[0].properties.gender}</span>
+      </div>
+      <div class="planet-label">
+         <h5>DOB</h5>
+         <span>${result[0].properties.birth_year}</span>
+      </div>
+      <div class="planet-label">
+         <h5>Weight</h5>
+         <span>${result[0].properties.mass} kgs</span>
+      </div>
+      <div class="planet-label">
+         <h5>Height</h5>
+         <span>${result[0].properties.height} cm</span>
+      </div>
+      <div class="planet-label">
+         <h5>Skin tone</h5>
+         <span style="text-transform: capitalize">${result[0].properties.skin_color}</span>
+      </div>
+      <div class="planet-label">
+         <h5>Hair color</h5>
+         <span style="text-transform: capitalize">${result[0].properties.hair_color}</span>
+      </div>
+      <div class="planet-label">
+         <h5>Eye color</h5>
+         <span style="text-transform: capitalize">${result[0].properties.eye_color}</span>
+      </div> 
+      `;
+         })
+         .catch((err) => {
+            console.log(err);
+         });
+   });
 });
