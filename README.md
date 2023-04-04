@@ -12,6 +12,6 @@ This project focuses on the **Star Wars** movie franchise and fetches data from 
 
 A user can view a list of the **Star Wars** movie franchise, planets and characters of the films.
 
-The project can be viewed at [Star Wars Universe](https://ase020.github.io/phase-1-project/)
+The project can be viewed at [Star Wars Universe](https://ase020.github.io/star-wars-universe)
 
 ### Project Author: Felix Nyalenda
