@@ -348,6 +348,11 @@ ul#pList {
    border-radius: 4px;
 }
 
+.people-wrapper #character-error {
+   color: rgb(250, 88, 88);
+   display: none;
+}
+
 .people-details {
    background: rgb(239, 239, 232);
    border-radius: 12px;

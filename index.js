@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             movieList.addEventListener("click", () => {
                filmDetails.style.display = "flex";
-               console.log(film.properties.planets);
                filmDetails.innerHTML = `
                
                <div class="film-label">
@@ -142,12 +141,14 @@ document.addEventListener("DOMContentLoaded", () => {
    //   Add Planet eventListener
    addPlanet.addEventListener("click", () => {
       pDetails.style.display = "flex";
+      pDetails.innerHTML = "";
+      pDetails.append(pForm);
+      pDetails.append(savedPlanet);
    });
 
    pForm.addEventListener("submit", (e) => {
       e.preventDefault();
       savedPlanet.style.display = "flex";
-      // eslint-disable-next-line no-unused-vars
       const newPlanetObj = {
          name: e.target.planet_name.value,
          population: e.target.planet_population.value,
@@ -160,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
          surface_water: e.target.surface_water.value,
       };
 
-      pForm.reset();
+      // pForm.reset();
    });
 
    //    Warns a user of page reload
@@ -280,4 +281,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((err) => {
          console.log(err.message);
       });
+
+   // Search character functionality
 });
