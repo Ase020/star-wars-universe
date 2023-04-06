@@ -57,6 +57,42 @@ nav .menu-list li:hover {
    transition: 0.5s all ease;
 }
 
+@media (max-width: 480px) {
+   /* Navbar */
+   nav ul.menu-list {
+      display: none;
+   }
+
+   /* film section */
+   .film-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+   }
+
+   .film-list {
+   }
+
+   #film-catalog {
+      margin-bottom: 4px;
+   }
+
+   .film-list ul .li {
+      margin-top: 4px;
+   }
+
+   #film-details {
+      overflow: auto;
+      gap: 2px;
+      justify-content: start;
+   }
+
+   /* ::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
+   } */
+}
+
 .section {
    height: 100vh;
    padding: 90px 15px 0 15px;
