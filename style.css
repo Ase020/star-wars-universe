@@ -59,6 +59,10 @@ nav .menu-list li:hover {
 
 @media (max-width: 480px) {
    /* Navbar */
+   nav {
+      justify-content: center;
+   }
+
    nav ul.menu-list {
       display: none;
    }
