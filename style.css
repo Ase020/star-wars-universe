@@ -448,7 +448,7 @@ ul#pList {
 .people-details {
    background: rgb(239, 239, 232);
    border-radius: 12px;
-   width: 60%;
+   width: 80%;
    height: 60%;
    display: grid;
    grid-template-columns: repeat(2, minmax(0, 1fr));
