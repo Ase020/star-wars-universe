@@ -118,6 +118,10 @@ nav .menu-list li:hover {
       justify-content: center;
       height: 50%;
    }
+
+   .saved-planet {
+      margin-top: 12px;
+   }
 }
 
 .section {
@@ -392,10 +396,23 @@ ul#pList {
    border-radius: 8px;
 }
 
+@media (max-width: 480px) {
+   #people-list {
+      font-size: 12px;
+      display: grid;
+      text-align: start;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+   }
+
+   #people-list li:nth-child(n + 5) {
+      display: none;
+   }
+}
+
 .search-container {
    background: rgb(239, 239, 232);
    padding: 12px;
-   width: 40%;
+   width: 80%;
    border-radius: 8px;
    display: flex;
    gap: 0;
@@ -416,7 +433,7 @@ ul#pList {
    border-radius: 0 4px 4px 0;
    border: 0.5px solid #fadd06;
    border-left: none;
-   width: 10%;
+   width: 15%;
 }
 
 .people-wrapper #character-error {
