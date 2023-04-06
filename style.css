@@ -114,7 +114,7 @@ nav .menu-list li:hover {
 
    #planet-details {
       overflow: auto;
-      gap: 2px;
+      gap: 8px;
       justify-content: center;
       height: 50%;
    }
