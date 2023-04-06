@@ -70,9 +70,6 @@ nav .menu-list li:hover {
       gap: 10px;
    }
 
-   .film-list {
-   }
-
    #film-catalog {
       margin-bottom: 4px;
    }
@@ -87,10 +84,40 @@ nav .menu-list li:hover {
       justify-content: start;
    }
 
-   /* ::-webkit-scrollbar {
-      width: 0;
-      background: transparent;
-   } */
+   /* Planets section */
+   #planets {
+      height: auto;
+      padding-bottom: 60px;
+   }
+
+   .planet-wrapper {
+      flex-direction: column;
+      gap: 8px;
+      height: fit-content;
+   }
+
+   .planet-list {
+      overflow: scroll;
+      gap: 2px;
+      justify-content: start;
+      padding: 8px;
+      height: 40%;
+   }
+
+   #planet-catalog {
+      margin-bottom: 0px;
+   }
+
+   .planet-list ul .li {
+      margin-top: 4px;
+   }
+
+   #planet-details {
+      overflow: auto;
+      gap: 2px;
+      justify-content: center;
+      height: 50%;
+   }
 }
 
 .section {
