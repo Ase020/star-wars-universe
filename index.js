@@ -15,21 +15,32 @@ document.addEventListener("DOMContentLoaded", () => {
    logoIcon.append(spanLogo && imgLogo);
 
    function romanConverter(episode) {
-      if (episode === 1) {
-         return "Episode I: ";
-      } else if (episode === 2) {
-         return "Episode II: ";
-      } else if (episode === 3) {
-         return "Episode III: ";
-      } else if (episode === 4) {
-         return "Episode IV: ";
-      } else if (episode === 5) {
-         return "Episode V: ";
-      } else if (episode === 6) {
-         return "Episode VI: ";
-      } else if (episode === 7) {
-         return "Episode VII: ";
-      }
+      // if (episode === 1) {
+      //    return "Episode I: ";
+      // } else if (episode === 2) {
+      //    return "Episode II: ";
+      // } else if (episode === 3) {
+      //    return "Episode III: ";
+      // } else if (episode === 4) {
+      //    return "Episode IV: ";
+      // } else if (episode === 5) {
+      //    return "Episode V: ";
+      // } else if (episode === 6) {
+      //    return "Episode VI: ";
+      // } else if (episode === 7) {
+      //    return "Episode VII: ";
+      // }
+      const episodeMap = new Map([
+         [1, "I"],
+         [2, "II"],
+         [3, "III"],
+         [4, "IV"],
+         [5, "V"],
+         [6, "VI"],
+         [7, "VII"],
+      ]);
+
+      return episodeMap.has(episode) ? `Episode ${episodeMap.get(episode)}: ` : "Unkown episode";
    }
 
    //    Fetch film data
@@ -47,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
             movieList.addEventListener("click", () => {
                filmDetails.style.display = "flex";
                filmDetails.innerHTML = `
-               
+
                <div class="film-label">
                <h5>Title</h5>
                <span>${film.properties.title}</span>
@@ -278,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="planet-label">
          <h5>Eye color</h5>
          <span style="text-transform: capitalize">${result.properties.eye_color}</span>
-      </div> 
+      </div>
       `;
          // <div class="planet-label">
          //    <h5>Home planet</h5>
@@ -335,7 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="planet-label">
          <h5>Eye color</h5>
          <span style="text-transform: capitalize">${result[0].properties.eye_color}</span>
-      </div> 
+      </div>
       `;
          })
          .catch((err) => {
